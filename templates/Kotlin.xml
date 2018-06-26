@@ -1,0 +1,110 @@
+<templateSet group="Kotlin">
+  <template name="main" value="fun main(args: Array&lt;String&gt;) {&#10;  $END$&#10;}" description="main() function" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="maino" value="@JvmStatic&#10;fun main(args: Array&lt;String&gt;) {&#10;  $END$&#10;}" description="main() function" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="sout" value="println($END$)" description="Prints a string to System.out" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="serr" value="System.err.println($END$)" description="Prints a string to System.err" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="soutv" value="println(&quot;$EXPR_COPY$ = $DOLLAR${$EXPR$}&quot;)" description="Prints a value to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="DOLLAR" expression="" defaultValue="&quot;$&quot;" alwaysStopAt="false" />
+    <variable name="EXPR" expression="kotlinVariable()" defaultValue="&quot;expr&quot;" alwaysStopAt="true" />
+    <variable name="EXPR_COPY" expression="EXPR" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="soutp" value="println($FORMAT$)" description="Prints function parameter names and values to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="FORMAT" expression="groovyScript(&quot;'\&quot;' + _1.collect { it + ' = [${' + it + '}]'}.join(', ') + '\&quot;'&quot;, functionParameters())" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="iter" value="for ($VAR$ in $ITERABLE$) {&#10;$END$&#10;}" description="Iterate over elements of iterable (for-in loop)" toReformat="true" toShortenFQNames="true">
+    <variable name="ITERABLE" expression="kotlinVariable()" defaultValue="&quot;iterable&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="kotlinSuggestVariableName()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ifn" value="if ($VAR$ == null) {&#10;$END$&#10;}" description="Inserts ''if null'' expression" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="kotlinVariable()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="inn" value="if ($VAR$ != null) {&#10;$END$&#10;}" description="Inserts ''if not null'' expression" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="kotlinVariable()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="void" value="fun $NAME$($PARAMS$) {&#10;$END$&#10;}" description="Function returning nothing" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="fun0" value="fun $NAME$() : $RETURN$ {&#10;$END$&#10;}" description="Function with no parameters" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN" expression="" defaultValue="&quot;Unit&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="fun1" value="fun $NAME$($PARAM1$ : $PARAM1TYPE$) : $RETURN$ {&#10;$END$&#10;}" description="Function with one parameter" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAM1" expression="" defaultValue="&quot;x&quot;" alwaysStopAt="true" />
+    <variable name="PARAM1TYPE" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <variable name="RETURN" expression="" defaultValue="&quot;Unit&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="fun2" value="fun $NAME$($PARAM1$ : $PARAM1TYPE$, $PARAM2$ : $PARAM2TYPE$) : $RETURN$ {&#10;$END$&#10;}" description="Function with two parameters" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAM1" expression="" defaultValue="&quot;x&quot;" alwaysStopAt="true" />
+    <variable name="PARAM1TYPE" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <variable name="PARAM2" expression="" defaultValue="&quot;y&quot;" alwaysStopAt="true" />
+    <variable name="PARAM2TYPE" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <variable name="RETURN" expression="" defaultValue="&quot;Unit&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="interface" value="interface $NAME$ {&#10;$END$&#10;}" description="Interface" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="singleton" value="object $NAME$ {&#10;$END$&#10;}" description="Singleton" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="closure" value="{$PARAM$ -&gt; $PARAM_COPY$}" description="Closure (function without name)" toReformat="true" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="&quot;x&quot;" alwaysStopAt="true" />
+    <variable name="PARAM_COPY" expression="PARAM" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="anonymous" value="object : $SUPERTYPE$ {&#10;$END$&#10;}" description="Anonymous class" toReformat="true" toShortenFQNames="true">
+    <variable name="SUPERTYPE" expression="anonymousSuper()" defaultValue="&quot;Object&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="exfun" value="fun $RECEIVER$.$NAME$($PARAMS$) : $RETURN$ {&#10;$END$&#10;}" description="Extension function" toReformat="true" toShortenFQNames="true">
+    <variable name="RECEIVER" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="&quot;f&quot;" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN" expression="" defaultValue="&quot;Unit&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="exval" value="val $RECEIVER$.$NAME$ : $TYPE$&#10;get() {&#10;$END$&#10;}" description="Extension read-only property" toReformat="true" toShortenFQNames="true">
+    <variable name="RECEIVER" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="&quot;v&quot;" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="exvar" value="var $RECEIVER$.$NAME$ : $TYPE$&#10;get() {&#10;$END$&#10;}&#10;set(value) {&#10; &#10;}" description="Extension read-write property" toReformat="true" toShortenFQNames="true">
+    <variable name="RECEIVER" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="&quot;v&quot;" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Any&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="psvm" value="fun main(args: Array&lt;String&gt;) {&#10;  $END$&#10;}" description="main() function" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="psvmo" value="@JvmStatic&#10;fun main(args: Array&lt;String&gt;) {&#10;  $END$&#10;}" description="main() function" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="soutf" value="println(&quot;$CLASS$.$METHOD$&quot;)" description="Prints current class and function name to System.out" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="groovyScript(&quot;_1 ?: '&lt;top&gt;'&quot;, kotlinClassName())" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+</templateSet>

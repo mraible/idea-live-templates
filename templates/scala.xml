@@ -1,0 +1,38 @@
+<templateSet group="scala">
+  <template name="main" value="def main(args: Array[String]): Unit = {&#10;  $END$&#10;}" description="Template for main method" toReformat="true" toShortenFQNames="true" />
+  <template name="opt" value="$OPTION$ match {&#10;  case Some($NAME$) =&gt; $END$&#10;  case None =&gt;&#10;}" description="Template for matching Option type" toReformat="false" toShortenFQNames="true">
+    <variable name="OPTION" expression="scalaVariableOfType(&quot;scala.Option&quot;)" defaultValue="option" alwaysStopAt="true" />
+    <variable name="NAME" expression="suggestScalaVariableName(&quot;option&quot;, OPTION)" defaultValue="x" alwaysStopAt="true" />
+  </template>
+  <template name="itr" value="for ($NAME$ &lt;- $FOR$ $GUARD$) {&#10;  $END$&#10;  }" description="Template for scala foreach" toReformat="true" toShortenFQNames="true">
+    <variable name="FOR" expression="scalaVariableOfType(&quot;foreach&quot;)" defaultValue="option" alwaysStopAt="true" />
+    <variable name="NAME" expression="suggestScalaVariableName(&quot;foreach&quot;, FOR)" defaultValue="x" alwaysStopAt="true" />
+    <variable name="GUARD" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="itry" value="for ($NAME$ &lt;- $FOR$ $GUARD$) yield {&#10;  $END$&#10;  }" description="Template for scala foreach" toReformat="true" toShortenFQNames="true">
+    <variable name="FOR" expression="scalaVariableOfType(&quot;foreach&quot;)" defaultValue="option" alwaysStopAt="true" />
+    <variable name="NAME" expression="suggestScalaVariableName(&quot;foreach&quot;, FOR)" defaultValue="x" alwaysStopAt="true" />
+    <variable name="GUARD" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="priv" value="println(s&quot;$EXPR_COPY$ = $${$EXPR$}&quot;)" description="Template for expressions output" toReformat="true" toShortenFQNames="true">
+    <variable name="EXPR" expression="scalaVariableOfType(&quot;&quot;)" defaultValue="false" alwaysStopAt="true" />
+    <variable name="EXPR_COPY" expression="EXPR" defaultValue="" alwaysStopAt="false" />
+  </template>
+  <template name="T" value="&lt;$TAG$&gt;$SELECTION$&lt;/$TAGNAME$&gt;&#10;" description="Surround with &lt;tag&gt;&lt;/tag&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="TAG" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SELECTION" expression="" defaultValue="" alwaysStopAt="false" />
+    <variable name="TAGNAME" expression="firstWord(TAG)" defaultValue="&quot;&quot;" alwaysStopAt="false" />
+  </template>
+  <template name="unapply" value="def unapply(arg: $ARG_TYPE$): Option[$RET_TYPE$] = $END$" description="Template for unapply" toReformat="true" toShortenFQNames="true">
+    <variable name="ARG_TYPE" expression="scala_className" defaultValue="X" alwaysStopAt="false" />
+    <variable name="RET_TYPE" expression="scala_primaryConstructorParamTypes(scala_primaryConstructorParams)" defaultValue="Int" alwaysStopAt="true" />
+  </template>
+  <template name="apply" value="def apply$ARGS$: $RET_TYPE$ = new $RET_TYPE$($ARGS_NO_TYPES$)" description="Template for apply" toReformat="true" toShortenFQNames="true">
+    <variable name="ARGS" expression="scala_primaryConstructorParams" defaultValue="x" alwaysStopAt="true" />
+    <variable name="RET_TYPE" expression="scala_className" defaultValue="x" alwaysStopAt="false" />
+    <variable name="ARGS_NO_TYPES" expression="scala_primaryConstructorParamNames(ARGS)" defaultValue="x" alwaysStopAt="true" />
+  </template>
+  <template name="todo" value="// TODO: $todo$ " description="adds // TODO" toReformat="true" toShortenFQNames="true">
+    <variable name="todo" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+</templateSet>

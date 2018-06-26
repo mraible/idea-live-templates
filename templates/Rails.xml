@@ -1,0 +1,229 @@
+<templateSet group="Rails">
+  <template name="asrar" value="assert_raise(ActiveRecord::RecordNotFound) { $CLASS$.find(@$THING$.$ID$) }$END$" description="assert raise ActiveRecord::RecordNotFound" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="THING" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="asre" value="assert_response :$SUCCESS$" description="assert response" toReformat="true" toShortenFQNames="true">
+    <variable name="SUCCESS" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="asrt" value="assert_redirected_to $END$" description="assert redirected" toReformat="true" toShortenFQNames="true" />
+  <template name="bt" value="belongs_to :$OBJ$, :class_name =&gt; &quot;$CLASS_NAME$&quot;, :foreign_key =&gt; &quot;$FOREIGN_KEY_ID$&quot;$END$" description="belongs to" toReformat="true" toShortenFQNames="true">
+    <variable name="OBJ" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FOREIGN_KEY_ID" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="flash" value="flash[:$NOTICE$] = &quot;$MESSAGE$&quot;" description="Creates a flash" toReformat="true" toShortenFQNames="true">
+    <variable name="NOTICE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="hm" value="has_many :$OBJECTS$, :class_name =&gt; &quot;$CLASS_NAME$&quot;, :foreign_key =&gt; &quot;$FOREIGN_KEY$_id&quot;$END$" description="has_many" toReformat="true" toShortenFQNames="true">
+    <variable name="OBJECTS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FOREIGN_KEY" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="ho" value="has_one :$OBJ$, :class_name =&gt; &quot;$CLASS_NAME$&quot;, :foreign_key =&gt; &quot;$FOREIGN_KEY$_id&quot;$END$" description="has_one" toReformat="true" toShortenFQNames="true">
+    <variable name="OBJ" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FOREIGN_KEY" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mac" value="add_column :$TABLE_NAME$, :$COLUMN_NAME$, :$STRING$" description="model add column" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mai" value="add_index :$TABLE_NAME$,[:$COLUMN_NAME$], :name =&gt; &quot;$COLUMN_NAME$_index&quot;$END$" description="model add index" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mcc" value="change_column :$TABLE_NAME$, :$COLUMN_NAME$, :$STRING$, $DEFAULT$ =&gt; 1$END$" description="model change column" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mct" value="create_table :$TABLE_NAME$ do |t|&#10;  $END$&#10;end" description="model create table" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mdt" value="drop_table :$TABLE_NAME$" description="model drop table" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mnc" value="rename_column :$TABLE_NAME$, :$COLUMN_NAME$, :$NEW_COLUMN_NAME$" description="model rename column" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NEW_COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mrc" value="remove_column :$TABLE_NAME$, :$COLUMN_NAME$" description="model remove column" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mri" value="remove_index :$TABLE_NAME$, :$COLUMN_NAME$" description="model remove index" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="mtc" value="t.column :$COLUMN_NAME$, :$TYPE$" description="model table column" toReformat="true" toShortenFQNames="true">
+    <variable name="COLUMN_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="ra" value="render :action =&gt; &quot;$ACTION$&quot;$END$&#10;&#10;" description="render with action" toReformat="true" toShortenFQNames="true">
+    <variable name="ACTION" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="ral" value="render :action =&gt; &quot;$ACTION$&quot;, :layout =&gt; &quot;$LAYOUT_NAME$&quot;$END$" description="render with action and layout" toReformat="true" toShortenFQNames="true">
+    <variable name="ACTION" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="LAYOUT_NAME" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rea" value="redirect_to :action =&gt; &quot;$ACTION$&quot;$END$" description="redirect_to with action" toReformat="true" toShortenFQNames="true">
+    <variable name="ACTION" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="reai" value="redirect_to :action =&gt; &quot;$ACTION$&quot;, :id =&gt; $ID$" description="redirect_to with action and id" toReformat="true" toShortenFQNames="true">
+    <variable name="ACTION" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rec" value="redirect_to :controller =&gt; &quot;$CONTROLLER$&quot;$END$" description="redirect_to with controller" toReformat="true" toShortenFQNames="true">
+    <variable name="CONTROLLER" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="reca" value="redirect_to :controller =&gt; &quot;$CONTROLLER$&quot;, :action =&gt; &quot;$ACTION$&quot;$END$" description="redirect_to with controller and action" toReformat="true" toShortenFQNames="true">
+    <variable name="CONTROLLER" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="recai" value="redirect_to :controller =&gt; &quot;$CONTROLLER$&quot;, :action =&gt; &quot;$ACTION$&quot;, :id =&gt; $ID$" description="redirect_to with controller, action, and id" toReformat="true" toShortenFQNames="true">
+    <variable name="CONTROLLER" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rf" value="render :file =&gt; &quot;$FILE_PATH$&quot;" description="render file" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_PATH" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rfu" value="render :file =&gt; &quot;$FILE_PATH$&quot;, :use_full_path =&gt; $USE_FULL_PATH$" description="render file with use_full_path" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_PATH" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="USE_FULL_PATH" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="ri" value="render :inline =&gt; &quot;&lt;%= '$MESSAGE$' %&gt;&quot;" description="render inline" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="ril" value="render :inline =&gt; &quot;&lt;%= '$MESSAGE$' %&gt;&quot;, :locals =&gt; { $NAME$ =&gt; &quot;$VALUE$&quot; }" description="render inline with locals" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rit" value="render :inline =&gt; &quot;&lt;%= '$MESSAGE$' %&gt;&quot;, :type =&gt; $RXML$" description="render inline with type" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RXML" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rl" value="render :layout =&gt; &quot;$LAYOUT_NAME$&quot;$END$" description="render layout" toReformat="true" toShortenFQNames="true">
+    <variable name="LAYOUT_NAME" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rn" value="render :nothing =&gt; $TRUE$" description="render with nothing" toReformat="true" toShortenFQNames="true">
+    <variable name="TRUE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rns" value="render :nothing =&gt; $TRUE$, :status =&gt; $HTTP_STATUS$" description="render with nothing and status" toReformat="true" toShortenFQNames="true">
+    <variable name="TRUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="HTTP_STATUS" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rp" value="render :partial =&gt; &quot;$ITEM$&quot;" description="render partial" toReformat="true" toShortenFQNames="true">
+    <variable name="ITEM" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rpc" value="render :partial =&gt; &quot;$ITEM$&quot;, :collection =&gt; $ITEMS$" description="render partial with collection" toReformat="true" toShortenFQNames="true">
+    <variable name="ITEM" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ITEMS" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rpl" value="render :partial =&gt; &quot;$ITEM$&quot;, :locals =&gt; { :$NAME$ =&gt; &quot;$VALUE$&quot; }" description="render partial with locals" toReformat="true" toShortenFQNames="true">
+    <variable name="ITEM" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rpo" value="render :partial =&gt; &quot;$ITEM$&quot;, :object =&gt; $OBJ$" description="render partial with object" toReformat="true" toShortenFQNames="true">
+    <variable name="ITEM" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="OBJ" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rps" value="render :partial =&gt; &quot;$ITEM$&quot;, :status =&gt; $HTTP_STATUS$" description="render partial with status" toReformat="true" toShortenFQNames="true">
+    <variable name="ITEM" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="HTTP_STATUS" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rt" value="render :text =&gt; &quot;$TEXT$&quot;" description="render text" toReformat="true" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rtl" value="render :text =&gt; &quot;$TEXT$&quot;, :layout =&gt; &quot;$LAYOUT_NAME$&quot;" description="render text with layout name" toReformat="true" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LAYOUT_NAME" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rtlt" value="render :text =&gt; &quot;$TEXT$&quot;, :layout =&gt; $TRUE$" description="render text with layout" toReformat="true" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TRUE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="rts" value="render :text =&gt; &quot;$TEXT$&quot;, :status =&gt; $HTTP_STATUS$" description="render text with status" toReformat="true" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="HTTP_STATUS" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="s" value="session[:$USER$]$END$" description="session" toReformat="true" toShortenFQNames="true">
+    <variable name="USER" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="script" value="&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&#10;$SELECTION$&#10;&lt;/script&gt;" description="" toReformat="true" toShortenFQNames="true" />
+  <template name="va" value="validates_associated :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;" description="validates associated" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vaif" value="validates_associated :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;, :if =&gt; proc { |obj| $OBJECT_CONDITION$ }" description="validates associated with if" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OBJECT_CONDITION" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vc" value="validates_confirmation_of :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$MESSAGE$&quot;" description="validates confirmation of" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vcif" value="validates_confirmation_of :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$MESSAGE$&quot;, :if =&gt; proc { |obj| $OBJECT_CONDITION$ }" description="validates confirmation of with if" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OBJECT_CONDITION" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="ve" value="validates_exclusion_of :$ATTRIBUTE$, :in =&gt; $ENUMERABLE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$MESSAGE$&quot;" description="validates exclusion of" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENUMERABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="veif" value="validates_exclusion_of :$ATTRIBUTE$, :in =&gt; $ENUMERABLE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$IS_NOT_ALLOWED$&quot;, :if =&gt; proc { |obj| $OBJECT_CONDITION$ }" description="validates exclusion of" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENUMERABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="IS_NOT_ALLOWED" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OBJECT_CONDITION" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="verify" value="verify :only =&gt; [:$E$], :method =&gt; :post, :render =&gt; {:status =&gt; 500, :text =&gt; &quot;use HTTP-POST&quot;}" description="verify post-only" toReformat="true" toShortenFQNames="true">
+    <variable name="E" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="verifyr" value="verify :only =&gt; [:$E$], :session =&gt; :user, :params =&gt; :id, :redirect_to =&gt; {:action =&gt; '$INDEX$'}" description="verify user session with redirect" toReformat="true" toShortenFQNames="true">
+    <variable name="E" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INDEX" expression="complete()" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vlen" value="validates_length_of $NAME$, :maximum=&gt;$INTEGER$, :message=&gt;&quot;$MESSAGE$&quot;" description="validates length of" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INTEGER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vp" value="validates_presence_of :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$MESSAGE$&quot;" description="validate presence of" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vpif" value="validates_presence_of :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$MESSAGE$&quot;, :if =&gt; proc { |obj| $OBJECT_CONDITION$ }" description="validates presence of with object condition" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OBJECT_CONDITION" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vu" value="validates_uniqueness_of :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$MESSAGE$&quot;" description="validate uniqueness of" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+  <template name="vuif" value="validates_uniqueness_of :$ATTRIBUTE$, :on =&gt; &quot;$CREATE$&quot;, :message =&gt; &quot;$MESSAGE$&quot;, :if =&gt; proc { |obj| $OBJECT_CONDITION$ }" description="validates uniqueness of with object condition" toReformat="true" toShortenFQNames="true">
+    <variable name="ATTRIBUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OBJECT_CONDITION" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+</templateSet>

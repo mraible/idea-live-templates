@@ -1,0 +1,24 @@
+<templateSet group="JavaScript">
+  <template name="iter" value="for (let $VAR$ of $ARRAY$) {&#10;  $END$&#10;}" description="Iterate (for..of) - ES2015" toReformat="true" toShortenFQNames="true">
+    <variable name="ARRAY" expression="jsArrayVariable()" defaultValue="&quot;array &quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="&quot;o&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="itin" value="for (var $VAR$ in $ARRAY$) {&#10;  $END$&#10;}" description="Iterate (for..in)" toReformat="true" toShortenFQNames="true">
+    <variable name="ARRAY" expression="jsArrayVariable()" defaultValue="&quot;array &quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="&quot;o&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="itar" value="for (var $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.length; $INDEX$++) {&#10;  var $VAR$ = $ARRAY$[$INDEX$];&#10;  $END$&#10;}" description="Iterate elements of array" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="jsSuggestIndexName()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="jsArrayVariable()" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="&quot;o&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ritar" value="for (var $INDEX$ = $ARRAY$.length - 1; $INDEX$ &gt;= 0; $INDEX$--) {&#10;  var $VAR$ = $ARRAY$[$INDEX$];&#10;  $END$&#10;}" description="Iterate elements of array in reverse order" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="jsSuggestIndexName()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="jsArrayVariable()" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="&quot;o&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

@@ -1,0 +1,26 @@
+<templateSet group="Groovy">
+  <template name="serr" value="System.err.println(&quot;$END$&quot;)" description="Prints a string to System.err" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="sout" value="println $END$" description="Prints a string to System.out" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="souf" value="printf &quot;$END$&quot;" description="Prints a formatted string to System.out" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="soutm" value=" println &quot;$CLASS_NAME$.$METHOD_NAME$&quot;" description="Prints current class and method names to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="soutp" value="println &quot;$FORMAT$&quot;" description="Prints method parameter names and values to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="FORMAT" expression="groovyScript(&quot;_1.collect { it + ' = [$' + it + ']'}.join(', ')&quot;, methodParameters())" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="soutv" value="println &quot;$EXPR_COPY$ = $DOLLAR$$EXPR$&quot;" description="Prints a value to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="DOLLAR" expression="" defaultValue="&quot;$&quot;" alwaysStopAt="false" />
+    <variable name="EXPR" expression="variableOfType(&quot;&quot;)" defaultValue="&quot;expr&quot;" alwaysStopAt="true" />
+    <variable name="EXPR_COPY" expression="EXPR" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+</templateSet>

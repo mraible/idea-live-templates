@@ -1,0 +1,6 @@
+<templateSet group="Zen XSL">
+  <template name="choose+" value="&lt;xsl:choose&gt;&#10;  &lt;xsl:when test=&quot;$VAR0$&quot;&gt;$VAR1$&lt;/xsl:when&gt;&#10;  &lt;xsl:otherwise&gt;$END$&lt;/xsl:otherwise&gt;&#10;&lt;/xsl:choose&gt;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR0" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+  </template>
+</templateSet>

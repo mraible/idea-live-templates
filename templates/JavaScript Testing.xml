@@ -1,0 +1,6 @@
+<templateSet group="JavaScript Testing">
+  <template name="it" value="it('should $NAME$', function() {&#10;  $END$&#10;}); " description="Inserts it() block" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

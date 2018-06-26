@@ -1,0 +1,34 @@
+<templateSet group="AndroidComments">
+  <template name="ccode" value="&lt;code&gt;$code$&lt;/code&gt;" description="code tag for javadoc" toReformat="false" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="cfalse" value="&lt;code&gt;false&lt;/code&gt;" description="puts false in a comment section" toReformat="false" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="clink" value="{@link $classToLink$}" description="link from within javadoc" toReformat="false" toShortenFQNames="true">
+    <variable name="classToLink" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ctrue" value="&lt;code&gt;true&lt;/code&gt;" description="puts true in a comment section" toReformat="false" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fixme" value="// FIXME: $date$ $todo$" description="adds // FIXME" toReformat="true" toShortenFQNames="true">
+    <variable name="date" expression="date()" defaultValue="" alwaysStopAt="false" />
+    <variable name="todo" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="noop" value="/* no-op */" description="indicate that a method does not have any operations" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="stopship" value="// STOPSHIP: $date$ $todo$ " description="adds // STOPSHIP" toReformat="true" toShortenFQNames="true">
+    <variable name="date" expression="date()" defaultValue="" alwaysStopAt="false" />
+    <variable name="todo" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="todo" value="// TODO: $date$ $todo$ " description="adds // TODO" toReformat="true" toShortenFQNames="true">
+    <variable name="date" expression="date()" defaultValue="" alwaysStopAt="false" />
+    <variable name="todo" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

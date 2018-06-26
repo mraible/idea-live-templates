@@ -1,0 +1,49 @@
+<templateSet group="HTTP Request">
+  <template name="gtr" value="GET http://$HOST$/$PATH$&#10;$HEADER$: $HEADER_VALUE$&#10;&#10;###" description="GET http://example.com/get" toReformat="true" toShortenFQNames="false">
+    <variable name="HOST" expression="" defaultValue="&quot;localhost:80&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;api/item&quot;" alwaysStopAt="true" />
+    <variable name="HEADER" expression="" defaultValue="&quot;Accepts&quot;" alwaysStopAt="true" />
+    <variable name="HEADER_VALUE" expression="" defaultValue="&quot;application/json&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="gtrp" value="GET http://$HOST$/$PATH$?$PARAM$=$VALUE$&#10;$HEADER$: $HEADER_VALUE$&#10;&#10;###" description="GET http://example.com/get?id=99" toReformat="true" toShortenFQNames="false">
+    <variable name="HOST" expression="" defaultValue="&quot;localhost:80&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;api/item&quot;" alwaysStopAt="true" />
+    <variable name="PARAM" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="&quot;99&quot;" alwaysStopAt="true" />
+    <variable name="HEADER" expression="" defaultValue="&quot;Accepts&quot;" alwaysStopAt="true" />
+    <variable name="HEADER_VALUE" expression="" defaultValue="&quot;application/json&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ptr" value="POST http://$HOST$/$PATH$&#10;Content-Type: $HEADER_VALUE$&#10;&#10;$BODY$&#10;&#10;###" description="POST http://example.com/add..." toReformat="true" toShortenFQNames="false">
+    <variable name="HOST" expression="" defaultValue="&quot;localhost:80&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;api/item&quot;" alwaysStopAt="true" />
+    <variable name="HEADER_VALUE" expression="" defaultValue="&quot;application/json&quot;" alwaysStopAt="true" />
+    <variable name="BODY" expression="" defaultValue="&quot;{}&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ptrp" value="POST http://$HOST$/$PATH$&#10;Content-Type: application/x-www-form-urlencoded&#10;&#10;$PARAM1$=$VALUE1$&amp;$PARAM2$=$VALUE2$&#10;&#10;###" description="POST application/x-www-form-urlencoded" toReformat="true" toShortenFQNames="false">
+    <variable name="HOST" expression="" defaultValue="&quot;localhost:80&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;api/item&quot;" alwaysStopAt="true" />
+    <variable name="PARAM1" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true" />
+    <variable name="VALUE1" expression="" defaultValue="&quot;99&quot;" alwaysStopAt="true" />
+    <variable name="PARAM2" expression="" defaultValue="&quot;content&quot;" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="&quot;new-element&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="mptr" value="POST http://$HOST$/$PATH$&#10;Content-Type: multipart/form-data; boundary=WebAppBoundary&#10;&#10;--WebAppBoundary&#10;Content-Disposition: form-data; name=&quot;$FIELD_NAME$&quot;&#10;&#10;$BODY$&#10;--WebAppBoundary--&#10;&#10;###" description="POST multipart/form-data" toReformat="true" toShortenFQNames="false">
+    <variable name="HOST" expression="" defaultValue="&quot;localhost:80&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;api/item&quot;" alwaysStopAt="true" />
+    <variable name="FIELD_NAME" expression="" defaultValue="&quot;field-name&quot;" alwaysStopAt="true" />
+    <variable name="BODY" expression="" defaultValue="&quot;field-value&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="fptr" value="POST http://$HOST$/$PATH$&#10;Content-Type: multipart/form-data; boundary=WebAppBoundary&#10;&#10;--WebAppBoundary&#10;Content-Disposition: form-data; name=&quot;$FIELD_NAME$&quot; filename=&quot;$FILE_NAME$&quot;&#10;&#10;&lt; $FILE_PATH$&#10;--WebAppBoundary--&#10;&#10;###" description="POST file by multipart/form-data" toReformat="true" toShortenFQNames="false">
+    <variable name="HOST" expression="" defaultValue="&quot;localhost:80&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;api/item&quot;" alwaysStopAt="true" />
+    <variable name="FIELD_NAME" expression="" defaultValue="&quot;field-name&quot;" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="" defaultValue="&quot;file.txt&quot;" alwaysStopAt="true" />
+    <variable name="FILE_PATH" expression="" defaultValue="&quot;./relative/path/to/local_file.txt&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

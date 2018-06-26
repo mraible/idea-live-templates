@@ -1,0 +1,389 @@
+<templateSet group="Zen CSS">
+  <template name="anim" value="animation:$END$;" description="animation:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="t" value="top:$END$;" description="top:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="r" value="right:$END$;" description="right:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="b" value="bottom:$END$;" description="bottom:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="l" value="left:$END$;" description="left:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="z" value="z-index:$END$;" description="z-index:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colm" value="columns:$END$;" description="columns:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmc" value="column-count:$END$;" description="column-count:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmf" value="column-fill:$END$;" description="column-fill:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmg" value="column-gap:$END$;" description="column-gap:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmr" value="column-rule:$END$;" description="column-rule:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmrc" value="column-rule-color:$END$;" description="column-rule-color:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmrs" value="column-rule-style:$END$;" description="column-rule-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmrw" value="column-rule-width:$END$;" description="column-rule-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colms" value="column-span:$END$;" description="column-span:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="colmw" value="column-width:$END$;" description="column-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="cp" value="clip:$END$;" description="clip:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="m" value="margin:$END$;" description="margin:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="mt" value="margin-top:$END$;" description="margin-top:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="mr" value="margin-right:$END$;" description="margin-right:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="mb" value="margin-bottom:$END$;" description="margin-bottom:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ml" value="margin-left:$END$;" description="margin-left:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="p" value="padding:$END$;" description="padding:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="pt" value="padding-top:$END$;" description="padding-top:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="pr" value="padding-right:$END$;" description="padding-right:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="pb" value="padding-bottom:$END$;" description="padding-bottom:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="pl" value="padding-left:$END$;" description="padding-left:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="w" value="width:$END$;" description="width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="h" value="height:$END$;" description="height:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="maw" value="max-width:$END$;" description="max-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="mah" value="max-height:$END$;" description="max-height:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="miw" value="min-width:$END$;" description="min-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="mih" value="min-height:$END$;" description="min-height:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ori" value="orientation:$END$;" description="orientation:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ol" value="outline:$END$;" description="outline:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="olo" value="outline-offset:$END$;" description="outline-offset:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="olw" value="outline-width:$END$;" description="outline-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ols" value="outline-style:$END$;" description="outline-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bd" value="border:$END$;" description="border:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdcl" value="border-collapse:$END$;" description="border-collapse:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdlen" value="border-length:$END$;" description="border-length:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdsp" value="border-spacing:$END$;" description="border-spacing:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bds" value="border-style:$END$;" description="border-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdw" value="border-width:$END$;" description="border-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdtw" value="border-top-width:$END$;" description="border-top-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdrw" value="border-right-width:$END$;" description="border-right-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdbw" value="border-bottom-width:$END$;" description="border-bottom-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdlw" value="border-left-width:$END$;" description="border-left-width:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdt" value="border-top:$END$;" description="border-top:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bt" value="border-top:$END$;" description="border-top:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdts" value="border-top-style:$END$;" description="border-top-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdr" value="border-right:$END$;" description="border-right:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="br" value="border-right:$END$;" description="border-right:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdrst" value="border-right-style:$END$;" description="border-right-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdb" value="border-bottom:$END$;" description="border-bottom:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bb" value="border-bottom:$END$;" description="border-bottom:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdbs" value="border-bottom-style:$END$;" description="border-bottom-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdl" value="border-left:$END$;" description="border-left:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bl" value="border-left:$END$;" description="border-left:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdls" value="border-left-style:$END$;" description="border-left-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdrs" value="border-radius:$END$;" description="border-radius:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdtrrs" value="border-top-right-radius:$END$;" description="border-top-right-radius:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdtlrs" value="border-top-left-radius:$END$;" description="border-top-left-radius:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdbrrs" value="border-bottom-right-radius:$END$;" description="border-bottom-right-radius:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bdblrs" value="border-bottom-left-radius:$END$;" description="border-bottom-left-radius:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bgr" value="background-repeat:$END$;" description="background-repeat:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bga" value="background-attachment:$END$;" description="background-attachment:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bgpx" value="background-position-x:$END$;" description="background-position-x:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bgpy" value="background-position-y:$END$;" description="background-position-y:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bgbk" value="background-break:$END$;" description="background-break:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bgo" value="background-origin:$END$;" description="background-origin:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bgsz" value="background-size:$END$;" description="background-size:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="tbl" value="table-layout:$END$;" description="table-layout:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="cps" value="caption-side:$END$;" description="caption-side:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ec" value="empty-cells:$END$;" description="empty-cells:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="lis" value="list-style:$END$;" description="list-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="lisp" value="list-style-position:$END$;" description="list-style-position:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="list" value="list-style-type:$END$;" description="list-style-type:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="lisi" value="list-style-image:$END$;" description="list-style-image:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="q" value="quotes:$END$;" description="quotes:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ct" value="content:$END$;" description="content:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="coi" value="counter-increment:$END$;" description="counter-increment:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="cor" value="counter-reset:$END$;" description="counter-reset:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ta-lst" value="text-align-last:$END$;" description="text-align-last:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="te" value="text-emphasis:$END$;" description="text-emphasis:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="th" value="text-height:$END$;" description="text-height:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ti" value="text-indent:$END$;" description="text-indent:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="tj" value="text-justify:$END$;" description="text-justify:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="to" value="text-outline:$END$;" description="text-outline:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="tr" value="text-replace:$END$;" description="text-replace:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="tw" value="text-wrap:$END$;" description="text-wrap:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="trfo" value="transform-origin:$END$;" description="transform-origin:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="lh" value="line-height:$END$;" description="line-height:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="whs" value="white-space:$END$;" description="white-space:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="whsc" value="white-space-collapse:$END$;" description="white-space-collapse:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="wob" value="word-break:$END$;" description="word-break:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="wos" value="word-spacing:$END$;" description="word-spacing:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="wow" value="word-wrap:$END$;" description="word-wrap:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="lts" value="letter-spacing:$END$;" description="letter-spacing:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="f" value="font:$END$;" description="font:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fw" value="font-weight:$END$;" description="font-weight:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fv" value="font-variant:$END$;" description="font-variant:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fz" value="font-size:$END$;" description="font-size:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fza" value="font-size-adjust:$END$;" description="font-size-adjust:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="ff" value="font-family:$END$;" description="font-family:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fef" value="font-effect:$END$;" description="font-effect:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fem" value="font-emphasize:$END$;" description="font-emphasize:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="femp" value="font-emphasize-position:$END$;" description="font-emphasize-position:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fems" value="font-emphasize-style:$END$;" description="font-emphasize-style:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fsm" value="font-smooth:$END$;" description="font-smooth:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fst" value="font-stretch:$END$;" description="font-stretch:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="op" value="opacity:$END$;" description="opacity:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="fxd" value="flex-direction:$END$;" description="flex-direction:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="fxw" value="flex-wrap:$END$;" description="flex-wrap:;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="fxf" value="flex-flow:$END$;" description="flex-flow:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="jc" value="justify-content:$END$;" description="justify-content:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="ai" value="align-items:$END$;" description="align-items:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="ac" value="align-content:$END$;" description="align-content:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="ord" value="order:$END$;" description="order:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="fxg" value="flex-grow:$END$;" description="flex-grow:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="fxsh" value="flex-shrink:$END$;" description="flex-shrink:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="fxb" value="flex-basis:$END$;" description="flex-basis:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="fx" value="flex:$END$;" description="flex:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="as" value="align-self:$END$;" description="align-self:...;" toReformat="true" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="pgbb" value="page-break-before:$END$;" description="page-break-before:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="pgbi" value="page-break-inside:$END$;" description="page-break-inside:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="pgba" value="page-break-after:$END$;" description="page-break-after:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="orp" value="orphans:$END$;" description="orphans:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="wid" value="widows:$END$;" description="widows:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+</templateSet>

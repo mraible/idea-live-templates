@@ -1,0 +1,47 @@
+<templateSet group="ColdFusion">
+  <template name="cfs" value="&lt;cfset $VAR$ = $VALUE$/&gt;" description="Insert cfset tag" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="&quot;var&quot;" defaultValue="&quot;var&quot;" alwaysStopAt="true" />
+    <variable name="VALUE" expression="&quot;value&quot;" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="cfd" value="&lt;cfdump var=&quot;#$VAR$#&quot;/&gt;" description="Insert cfdump tag" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="&quot;var&quot;" defaultValue="&quot;var&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="cfo" value="&lt;cfoutput&gt;$CONTENT$&lt;/cfoutput&gt;" description="Insert cfoutput tag" toReformat="false" toShortenFQNames="true">
+    <variable name="CONTENT" expression="&quot;CONTENT&quot;" defaultValue="&quot;CONTENT&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="coj" value="createObject(&quot;java&quot;, &quot;$CLASSPATH$&quot;)" description="Insert createObject (java) method call" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSPATH" expression="&quot;CLASSPATH&quot;" defaultValue="&quot;CLASSPATH&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="coc" value="createObject(&quot;component&quot;, &quot;$CFCPATH$&quot;)" description="Insert createObject (coldfusion component) method call" toReformat="false" toShortenFQNames="true">
+    <variable name="CFCPATH" expression="&quot;CFCPATH&quot;" defaultValue="&quot;CFCPATH&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="cow" value="createObject(&quot;webservice&quot;, &quot;$WSDL$&quot;)" description="Insert createObject (webservice) method call" toReformat="false" toShortenFQNames="true">
+    <variable name="WSDL" expression="&quot;WSDL&quot;" defaultValue="&quot;WSDL&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="r." value="request.$VAR$" description="Insert variable with request scope prefix" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="&quot;var&quot;" defaultValue="&quot;var&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="v." value="variables.$VAR$" description="Insert variable with variable scope prefix" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="&quot;var&quot;" defaultValue="&quot;var&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="a." value="application.$VAR$" description="Insert variable with application scope prefix" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="&quot;var&quot;" defaultValue="&quot;var&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="u." value="url.$VAR$" description="Insert variable with url scope prefix" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="&quot;var&quot;" defaultValue="&quot;var&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="f." value="form.$VAR$" description="Insert variable with form scope prefix" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="&quot;var&quot;" defaultValue="&quot;var&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

@@ -1,0 +1,24 @@
+<templateSet group="JSP">
+  <template name="faca" value="&lt;$NAMESPACE$:attribute name=&quot;$NAME$&quot; required=&quot;$REQUIRED$&quot;/&gt;&#10;" description="Facelets composite component attribute" toReformat="false" toShortenFQNames="false">
+    <variable name="NAMESPACE" expression="" defaultValue="" alwaysStopAt="false" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="false" />
+    <variable name="REQUIRED" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSPX" value="true" />
+    </context>
+  </template>
+  <template name="jspa" value="&lt;%@attribute name=&quot;$NAME$&quot; type=&quot;$TYPE$&quot; required=&quot;$REQUIRED$&quot;%&gt;" description="JSP Tag attribute" toReformat="false" toShortenFQNames="false">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="classNameComplete()" defaultValue="java.lang.String" alwaysStopAt="true" />
+    <variable name="REQUIRED" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="jspxa" value="&lt;jsp:directive.attribute name=&quot;$NAME$&quot; type=&quot;$TYPE$&quot; required=&quot;$REQUIRED$&quot;/&gt;" description="JSPX Tag attribute" toReformat="false" toShortenFQNames="false">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="classNameComplete()" defaultValue="java.lang.String" alwaysStopAt="true" />
+    <variable name="REQUIRED" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSPX" value="true" />
+    </context>
+  </template>
+</templateSet>
