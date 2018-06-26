@@ -56,6 +56,8 @@ If you clone this project and open it in IntelliJ (with the Asciidoctor plugin i
 [source,java]
 ----
 
+----
+
 **okta-maven-boot**
 [source,xml]
 ----
@@ -81,8 +83,6 @@ If you clone this project and open it in IntelliJ (with the Asciidoctor plugin i
 ----
 
 == Angular
-
-----
 
 **ng-giphy-service**
 [source,typescript]
