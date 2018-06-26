@@ -6,80 +6,214 @@ I tried using IntelliJ's https://www.jetbrains.com/help/idea/sharing-live-templa
 
 https://www.jetbrains.com/idea/download/[Download IntelliJ IDEA] today! It's a spectacular IDEA for Java, Kotlin, TypeScript, JavaScript, S/CSS, and HTML.
 
-If you clone this project and open it in IntelliJ (with the Asciidoctor plugin installed), you should be able to edit this file and add the shortcuts below as live templates.
+If you clone this project and open it in IntelliJ (with the Asciidoctor plugin installed), you should be able to edit this file and add the shortcuts below as live templates (**Tools** > **Save as Live Template**). Make sure to set the file type to match the language.
 
 == Spring Boot
 
 **boot-entity**
 [source,java]
 ----
+@javax.persistence.Entity
+class $entity$ {
 
+    @javax.persistence.Id
+    @javax.persistence.GeneratedValue
+    private java.lang.Long id;
+    private java.lang.String name;
+
+    public $entity$() {}
+
+    public $entity$(String name) {
+        this.name = name;
+    }
+
+    public java.lang.Long getId() {
+        return id;
+    }
+
+    public void setId(java.lang.Long id) {
+        this.id = id;
+    }
+
+    public java.lang.String getName() {
+        return name;
+    }
+
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "$entity${" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+}
+----
+
+**boot-entity-lombok**
+[source,java]
+----
+@lombok.Data
+@lombok.AllArgsConstructor
+@lombok.NoArgsConstructor
+@javax.persistence.Entity
+class $name$ {
+
+    public $name$(java.lang.String name) {
+        this.name = name;
+    }
+
+    @javax.persistence.Id
+    @javax.persistence.GeneratedValue
+    private java.lang.Long id;
+
+    private java.lang.String name;
+}
 ----
 
 **boot-h2**
 [source,xml]
 ----
-
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+</dependency>
 ----
 
 **boot-sql**
 [source,sql]
 ----
-
+insert into $entity$ (name) values ('First');
+insert into $entity$ (name) values ('Second');
 ----
 
 **boot-repository**
 [source,java]
 ----
-
+interface $entity$Repository extends JpaRepository<$entity$, java.lang.Long> {}
 ----
 
 **boot-command**
 [source,java]
 ----
+@org.springframework.stereotype.Component
+class $entity$CommandLineRunner implements org.springframework.boot.CommandLineRunner {
 
+    private final $entity$Repository repository;
+
+    public $entity$CommandLineRunner($entity$Repository repository) {
+        this.repository = repository;
+    }
+
+    @java.lang.Override
+    public void run(java.lang.String... strings) throws java.lang.Exception {
+        repository.findAll().forEach(System.out::println);
+    }
+}
 ----
 
 **boot-add**
 [source,java]
 ----
-
+// Top beers from https://www.beeradvocate.com/lists/top/
+Stream.of("Kentucky Brunch Brand Stout", "Good Morning", "Very Hazy", "King Julius",
+        "Budweiser", "Coors Light", "PBR").forEach(name ->
+        repository.save(new Beer(name))
+);
 ----
 
 **boot-controller**
 [source,java]
 ----
+@org.springframework.web.bind.annotation.RestController
+class $entity$Controller {
 
+    private $entity$Repository repository;
+
+    public $entity$Controller($entity$Repository repository) {
+        this.repository = repository;
+    }
+
+    @org.springframework.web.bind.annotation.GetMapping("/$uriMapping$")
+    java.util.Collection<$entity$> list() {
+        return repository.findAll();
+    }
+}
 ----
 
 **boot-good**
 [source,java]
 ----
+@GetMapping("/good-beers")
+public Collection<Beer> goodBeers() {
 
+    return repository.findAll().stream()
+            .filter(this::isGreat)
+            .collect(Collectors.toList());
+}
+
+    private boolean isGreat(Beer beer) {
+        return !beer.getName().equals("Budweiser") &&
+            !beer.getName().equals("Coors Light") &&
+            !beer.getName().equals("PBR");
+    }
 ----
 
 **okta-maven-boot**
 [source,xml]
 ----
-
+ <dependency>
+    <groupId>com.okta.spring</groupId>
+    <artifactId>okta-spring-boot-starter</artifactId>
+    <version>$version$</version>
+</dependency>
 ----
 
-**spring-oauth2**
+**spring-oauth2-yaml**
 [source,yaml]
 ----
-
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: $clientId$
+            client-secret: $clientSecret$
+        provider:
+          okta:
+            authorization-uri: https://$yourOktaDomain$/oauth2/v1/authorize
+            token-uri: https://$yourOktaDomain$/oauth2/v1/token
+            user-info-uri: https://$yourOktaDomain$/oauth2/v1/userinfo
+            jwk-set-uri: https://$yourOktaDomain$/oauth2/v1/keys
 ----
 
 **okta-oauth2**
 [source,yaml]
 ----
-
+okta.oauth2.issuer=https://$youtOktaDomain$/oauth2/default
+okta.oauth2.clientId=$clientId$
 ----
 
 **cors-filter**
 [source,java]
 ----
-
+@org.springframework.context.annotation.Bean
+    public org.springframework.boot.web.servlet.FilterRegistrationBean simpleCorsFilter() {
+        org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
+        org.springframework.web.cors.CorsConfiguration config = new org.springframework.web.cors.CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.setAllowedOrigins(java.util.Collections.singletonList("http://localhost:4200"));
+        config.setAllowedMethods(java.util.Collections.singletonList("*"));
+        config.setAllowedHeaders(java.util.Collections.singletonList("*"));
+        source.registerCorsConfiguration("/**", config);
+        org.springframework.boot.web.servlet.FilterRegistrationBean bean = new org.springframework.boot.web.servlet.FilterRegistrationBean(new org.springframework.web.filter.CorsFilter(source));
+        bean.setOrder(org.springframework.core.Ordered.HIGHEST_PRECEDENCE);
+        return bean;
+    }
 ----
 
 == Angular
@@ -87,43 +221,177 @@ If you clone this project and open it in IntelliJ (with the Asciidoctor plugin i
 **ng-giphy-service**
 [source,typescript]
 ----
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
+@Injectable()
+// http://tutorials.pluralsight.com/front-end-javascript/getting-started-with-angular-2-by-building-a-giphy-search-application
+export class GiphyService {
+
+  // Public beta key: https://github.com/Giphy/GiphyAPI#public-beta-key
+  giphyApi = '//api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=1&q=';
+
+  constructor(public http: HttpClient) {
+  }
+
+  get(searchTerm) {
+    const apiLink = this.giphyApi + searchTerm;
+    return this.http.get(apiLink).map((response: any) => {
+      if (response.data.length > 0) {
+        return response.data[0].images.original.url;
+      } else {
+        return 'https://media.giphy.com/media/YaOxRsmrv9IeA/giphy.gif'; // dancing cat for 404
+      }
+    });
+  }
+}
 ----
 
 **ng-giphy-foreach**
 [source,typescript]
 ----
-
+for (const $item$ of this.$item$s) {
+  this.giphyService.get($item$.name).subscribe(url => $item$.giphyUrl = url);
+}
 ----
 
 **ng-okta-service**
 [source,typescript]
 ----
+import { Injectable } from '@angular/core';
+import * as OktaSignIn from '@okta/okta-signin-widget/dist/js/okta-sign-in.min.js'
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Observable } from 'rxjs/Observable';
 
+@Injectable()
+export class OktaAuthService {
+
+  signIn = new OktaSignIn({
+    baseUrl: 'https://dev-158606.oktapreview.com',
+    clientId: '0oac85oh5p2VqZJ7c0h7',
+    authParams: {
+      issuer: 'https://dev-158606.oktapreview.com',
+      responseType: ['id_token', 'token'],
+      scopes: ['openid', 'email', 'profile']
+    }
+  });
+
+  public user$: Observable<any>;
+  public userSource: ReplaySubject<any>;
+
+  constructor() {
+    this.userSource = new ReplaySubject<any>(1);
+    this.user$ = this.userSource.asObservable();
+  }
+
+  isAuthenticated() {
+    // Checks if there is a current accessToken in the TokenManger.
+    return !!this.signIn.tokenManager.get('accessToken');
+  }
+
+  login() {
+    // Launches the widget and stores the tokens.
+    this.signIn.renderEl({el: '#okta-signin-container'}, response => {
+      if (response.status === 'SUCCESS') {
+        response.forEach(token => {
+          if (token.idToken) {
+            this.signIn.tokenManager.add('idToken', token);
+          }
+          if (token.accessToken) {
+            this.signIn.tokenManager.add('accessToken', token);
+          }
+          this.userSource.next(this.idTokenAsUser);
+          this.signIn.hide();
+        });
+      } else {
+        console.error(response);
+      }
+    });
+  }
+
+  get idTokenAsUser() {
+    const token = this.signIn.tokenManager.get('idToken');
+    return {
+      name: token.claims.name,
+      email: token.claims.email,
+      username: token.claims.preferred_username
+    }
+  }
+
+  async logout() {
+    // Terminates the session with Okta and removes current tokens.
+    this.signIn.tokenManager.clear();
+    await this.signIn.signOut();
+    this.signIn.remove();
+    this.userSource.next(undefined);
+  }
+}
 ----
 
 **ng-okta-headers**
 [source,ts]
 ----
-
+const headers: Headers = new Headers();
+if (this.oktaService.isAuthenticated()) {
+  const accessToken = this.oktaService.signIn.tokenManager.get('accessToken');
+  headers.append('Authorization', accessToken.tokenType + ' ' + accessToken.accessToken);
+}
+const options = new RequestOptions({ headers: headers });
 ----
 
 **ng-okta-oninit**
 [source,ts]
 ----
+user;
 
+  constructor(public oktaService: OktaAuthService, private changeDetectorRef: ChangeDetectorRef) {
+  }
+
+  ngOnInit() {
+    // 1. for initial load and browser refresh
+    if (this.oktaService.isAuthenticated()) {
+      this.user = this.oktaService.idTokenAsUser;
+    } else {
+      this.oktaService.login();
+    }
+
+    // 2. register a listener for authentication and logout
+    this.oktaService.user$.subscribe(user => {
+      this.user = user;
+      if (!user) {
+        this.oktaService.login();
+      }
+      // Let Angular know that model changed.
+      // See https://github.com/okta/okta-signin-widget/issues/268 for more info.
+      this.changeDetectorRef.detectChanges();
+    });
+  }
 ----
 
 **ng-okta-login**
 [source,ts]
 ----
+<!-- Container to inject the Sign-In Widget -->
+<div id="okta-signin-container"></div>
 
+<div *ngIf="user">
+  <h2>
+    Welcome {{user?.name}}!
+  </h2>
+
+  <button mat-raised-button (click)="oktaService.logout()">Logout</button>
+</div>
+<div [hidden]="!user">
+  <app-beer-list></app-beer-list>
+</div>
 ----
 
 **ng-okta-css**
 [source,css]
 ----
-
+@import '~https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.1.0/css/okta-sign-in.min.css';
+@import '~https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.1.0/css/okta-theme.css';
 ----
 
 == Cloud Foundry
@@ -131,19 +399,137 @@ If you clone this project and open it in IntelliJ (with the Asciidoctor plugin i
 **cf-manifest**
 [source,yaml]
 ----
+applications:
 
+- name: beer-server
+  host: beer-server
+  path: ./server/target/demo-0.0.1-SNAPSHOT.jar
+  env :
+    FORCE_HTTPS: true
+
+- name: beer-client
+  host: beer-client
+  path: ./client/dist/
+  env :
+    FORCE_HTTPS: true
 ----
 
 **cf-build**
 [source,yaml]
 ----
+#!/bin/bash
 
+
+
+# set origin for client on server
+sed -i -e "s|http://localhost:4200|https://beer-server.cfapps.io|g" $start/server/src/main/java/com/okta/developer/demo/DemoApplication.java
+
+mvn clean package -f $start/server/pom.xml
+
+cd $start/client
+rm -rf dist
+# set API URL
+sed -i -e "s|http://localhost:8080|https://beer-server.cfapps.io|g" $start/client/src/app/shared/beer/beer.service.ts
+# set redirectURI to client URI
+sed -i -e "s|http://localhost:4200|https://beer-client.cfapps.io|g" $start/client/src/app/shared/okta/okta.service.ts
+yarn && ng build -prod --aot
+touch dist/Staticfile
+# enable pushstate so no 404s on refresh
+echo 'pushstate: enabled' > dist/Staticfile
+
+cd $start
+cf push
+
+# reset and remove changed files
+git checkout $start
+rm -rf $start/server/src/main/java/com/okta/developer/demo/DemoApplication.java-e
+rm -rf $start/client/src/app/shared/beer/beer.service.ts-e
+rm -rf $start/client/src/app/shared/okta/okta.service.ts-e
 ----
 
 **cf-react**
 [source,bash]
 ----
+#!/bin/bash
+# Warning: this script has only been tested on macOS Sierra. There's a good chance
+# it won't work on other operating systems. If you get it working on another OS,
+# please send a pull request with any changes required. Thanks!
+set -e
 
+### CloudFoundry CLI utilities
+CLOUD_DOMAIN=${DOMAIN:-run.pivotal.io}
+CLOUD_TARGET=api.${DOMAIN}
+
+function login(){
+    cf api | grep ${CLOUD_TARGET} || cf api ${CLOUD_TARGET} --skip-ssl-validation
+    cf apps | grep OK || cf login
+}
+
+function app_domain(){
+    D=`cf apps | grep $1 | tr -s ' ' | cut -d' ' -f 6 | cut -d, -f1`
+    echo $D
+}
+
+function deploy_service(){
+    N=$1
+    D=`app_domain $N`
+    JSON='{"uri":"http://'$D'"}'
+    cf create-user-provided-service $N -p $JSON
+}
+
+### Installation
+
+cd `dirname $0`
+r=`pwd`
+echo $r
+
+## Reset
+cf d -f react-client
+cf d -f good-beer-server
+
+cf a
+
+# Deploy the server
+cd $r/server
+mvn clean package
+cf push -p target/*jar good-beer-server --no-start  --random-route
+cf set-env good-beer-server FORCE_HTTPS true
+
+# Get the URL for the server
+serverUri=https://`app_domain good-beer-server`
+
+# Deploy the client
+cd $r/client
+rm -rf build
+# replace the server URL in the client
+sed -i -e "s|http://localhost:8080|$serverUri|g" $r/client/src/BeerList.tsx
+yarn && yarn build
+cd build
+touch Staticfile
+echo 'pushstate: enabled' > Staticfile
+cf push react-client --no-start --random-route
+cf set-env react-client FORCE_HTTPS true
+cf start react-client
+
+# Get the URL for the client
+clientUri=https://`app_domain react-client`
+
+# replace the client URL in the server
+sed -i -e "s|http://localhost:3000|$clientUri|g" $r/server/src/main/java/com/example/demo/DemoApplication.java
+
+# redeploy the server
+cd $r/server
+mvn package -DskipTests
+cf push -p target/*jar good-beer-server
+
+# cleanup changed files
+git checkout $r/client
+git checkout $r/server
+rm $r/client/src/BeerList.tsx-e
+rm $r/server/src/main/java/com/example/demo/DemoApplication.java-e
+
+# show apps and URLs
+cf apps
 ----
 
 == Heroku
@@ -151,7 +537,102 @@ If you clone this project and open it in IntelliJ (with the Asciidoctor plugin i
 **heroku-react**
 [source,bash]
 ----
+#!/bin/bash
+# Warning: this script has only been tested on macOS Sierra. There's a good chance
+# it won't work on other operating systems. If you get it working on another OS,
+# please send a pull request with any changes required. Thanks!
+set -e
 
+cd `dirname $0`
+r=`pwd`
+echo $r
+
+if [ -z "$(which heroku)" ]; then
+  echo "You must install the Heroku CLI first!"
+  echo "https://devcenter.heroku.com/articles/heroku-cli"
+  exit 1
+fi
+
+if ! echo "$(heroku plugins)" | grep -q heroku-cli-deploy; then
+  heroku plugins:install heroku-cli-deploy
+fi
+
+if ! echo "$(git remote -v)" | grep -q good-beer-server-; then
+  server_app=good-beer-server-$RANDOM
+  heroku create -r server $server_app
+else
+  server_app=$(heroku apps:info -r server --json | python -c 'import json,sys;print json.load(sys.stdin)["app"]["name"]')
+fi
+serverUri="https://$server_app.herokuapp.com"
+
+if ! echo "$(git remote -v)" | grep -q react-client-; then
+  client_app=react-client-$RANDOM
+  heroku create -r client $client_app
+else
+  client_app=$(heroku apps:info -r client --json | python -c 'import json,sys;print json.load(sys.stdin)["app"]["name"]')
+fi
+clientUri="https://$client_app.herokuapp.com"
+
+# replace the client URL in the server
+sed -i -e "s|http://localhost:3000|$clientUri|g" $r/server/src/main/java/com/example/demo/DemoApplication.java
+
+# Deploy the server
+cd $r/server
+mvn clean package -DskipTests
+
+heroku deploy:jar target/*jar -r server -o "--server.port=\$PORT"
+heroku config:set -r server FORCE_HTTPS="true"
+
+# Deploy the client
+cd $r/client
+rm -rf build
+# replace the server URL in the client
+sed -i -e "s|http://localhost:8080|$serverUri|g" $r/client/src/BeerList.tsx
+yarn && yarn build
+cd build
+
+cat << EOF > static.json
+{
+  "https_only": true,
+  "root": ".",
+  "routes": {
+    "/**": "index.html"
+  }
+}
+EOF
+
+rm -f ../dist.tgz
+tar -zcvf ../dist.tgz .
+
+# TODO replace this with the heroku-cli-static command `heroku static:deploy`
+source=$(curl -n -X POST https://api.heroku.com/apps/$client_app/sources -H 'Accept: application/vnd.heroku+json; version=3')
+get_url=$(echo "$source" | python -c 'import json,sys;print json.load(sys.stdin)["source_blob"]["get_url"]')
+put_url=$(echo "$source" | python -c 'import json,sys;print json.load(sys.stdin)["source_blob"]["put_url"]')
+curl "$put_url" -X PUT -H 'Content-Type:' --data-binary @../dist.tgz
+cat << EOF > build.json
+{
+  "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-static" }],
+  "source_blob": { "url" : "$get_url" }
+}
+EOF
+build_out=$(curl -n -s -X POST https://api.heroku.com/apps/$client_app/builds \
+  -d "$(cat build.json)" \
+  -H 'Accept: application/vnd.heroku+json; version=3' \
+  -H "Content-Type: application/json")
+output_stream_url=$(echo "$build_out" | python -c 'import json,sys;print json.load(sys.stdin)["output_stream_url"]')
+curl -s -L "$output_stream_url"
+
+rm build.json
+rm ../dist.tgz
+
+# cleanup changed files
+git checkout $r/client
+git checkout $r/server
+rm $r/client/src/BeerList.tsx-e
+rm $r/server/src/main/java/com/example/demo/DemoApplication.java-e
+
+# show apps and URLs
+heroku open -r client
 ----
 
 == JHipster
@@ -159,19 +640,45 @@ If you clone this project and open it in IntelliJ (with the Asciidoctor plugin i
 **jh-findBy**
 [source,java]
 ----
-
+findByBlogUserLoginOrderByDateDesc
 ----
 
 **jh-date**
 [source,ts]
 ----
-
+if (!vm.entry.date) {
+    vm.entry.date = new Date();
+}
 ----
 
 **jh-entries**
 [source,html]
 ----
-
+<div class="table-responsive" *ngIf="entries">
+    <div infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <div *ngFor="let entry of entries; trackBy: trackId">
+            <h2>{{entry.title}}</h2>
+            <small>Posted on {{entry.date | date: 'short'}} by {{entry.blog.user.login}}</small>
+            <div [innerHTML]="entry.content"></div>
+            <div class="btn-group mb-2 mt-1">
+                <button type="submit"
+                        [routerLink]="['/', { outlets: { popup: 'entry/'+ entry.id + '/edit'} }]"
+                        replaceUrl="true"
+                        class="btn btn-primary btn-sm">
+                    <span class="fa fa-pencil"></span>
+                    <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                </button>
+                <button type="submit"
+                        [routerLink]="['/', { outlets: { popup: 'entry/'+ entry.id + '/delete'} }]"
+                        replaceUrl="true"
+                        class="btn btn-danger btn-sm">
+                    <span class="fa fa-remove"></span>
+                    <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 ----
 
 == React
@@ -179,25 +686,123 @@ If you clone this project and open it in IntelliJ (with the Asciidoctor plugin i
 **okta-react-config**
 [source,ts]
 ----
+const config = {
+  issuer: 'https://$yourOktaDomain$/oauth2/default',
+  redirectUri: window.location.origin + '/implicit/callback',
+  clientId: '$clientId$'
+};
 
+export interface Auth {
+  login(): {};
+  logout(): {};
+  isAuthenticated(): boolean;
+  getAccessToken(): string;
+}
 ----
 
 **okta-react-render**
 [source,ts]
 ----
-
+render() {
+  return (
+    <Router>
+      <Security
+        issuer={config.issuer}
+        client_id={config.clientId}
+        redirect_uri={config.redirectUri}
+      >
+        <Route path="/" exact={true} component={Home}/>
+        <Route path="/implicit/callback" component={ImplicitCallback}/>
+      </Security>
+    </Router>
+  );
+}
 ----
 
 **okta-react-home**
 [source,ts]
 ----
+import * as React from 'react';
+import './App.css';
+import BeerList from './BeerList';
+import { withAuth } from '@okta/okta-react';
+import { Auth } from './App';
 
+const logo = require('./logo.svg');
+
+interface HomeProps {
+  auth: Auth;
+}
+
+interface HomeState {
+  authenticated: boolean;
+}
+
+export default withAuth(class Home extends React.Component<HomeProps, HomeState> {
+  constructor(props: HomeProps) {
+    super(props);
+    this.state = {authenticated: false};
+    this.checkAuthentication = this.checkAuthentication.bind(this);
+    this.checkAuthentication();
+  }
+
+  async checkAuthentication() {
+    const isAuthenticated = await this.props.auth.isAuthenticated();
+    const {authenticated} = this.state;
+    if (isAuthenticated !== authenticated) {
+      this.setState({authenticated: isAuthenticated});
+    }
+  }
+
+  componentDidUpdate() {
+    this.checkAuthentication();
+  }
+
+  render() {
+    const {authenticated} = this.state;
+    let body = null;
+    if (authenticated) {
+      body = (
+        <div className="Buttons">
+          <button onClick={this.props.auth.logout}>Logout</button>
+          <BeerList auth={this.props.auth}/>
+        </div>
+      );
+    } else {
+      body = (
+        <div className="Buttons">
+          <button onClick={this.props.auth.login}>Login</button>
+        </div>
+      );
+    }
+
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo"/>
+          <h2>Welcome to React</h2>
+        </div>
+        {body}
+      </div>
+    );
+  }
+});
 ----
 
 **okta-react-token**
 [source,ts]
 ----
+async componentDidMount() {
+  this.setState({isLoading: true});
 
+  const response = await fetch('http://localhost:8080/good-beers', {
+    headers: {
+      Authorization: 'Bearer ' + await this.props.auth.getAccessToken()
+    }
+  });
+  const data = await response.json();
+  this.setState({beers: data, isLoading: false});
+}
 ----
 
 == Contributing
