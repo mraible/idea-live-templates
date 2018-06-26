@@ -1,9 +1,0 @@
-<templateSet group="Angular2 TypeScript Live Templates">
-  <template name="a-ngFor" value="*ngFor=&quot;let $item$ of $list$&quot;" description="Angular *ngFor" toReformat="false" toShortenFQNames="true">
-    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
-    <variable name="list" expression="" defaultValue="&quot;list&quot;" alwaysStopAt="true" />
-    <context>
-      <option name="JADE" value="true" />
-    </context>
-  </template>
-</templateSet>

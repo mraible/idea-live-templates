@@ -1,8 +1,0 @@
-<templateSet group="GSP">
-  <template name="each" value="&lt;g:each in=&quot;$END$&quot; &gt;&#10;$SELECTION$&#10;&lt;/g:each&gt;" description="Surround with &lt;g:each&gt;&lt;/g:each&gt;" toReformat="true" toShortenFQNames="false">
-    <context />
-  </template>
-  <template name="if" value="&lt;g:if test=&quot;$END$&quot; &gt;&#10;$SELECTION$&#10;&lt;/g:if&gt;" description="Surround with &lt;g:if&gt;&lt;/g:if&gt;" toReformat="true" toShortenFQNames="false">
-    <context />
-  </template>
-</templateSet>
