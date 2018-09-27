@@ -2,11 +2,16 @@
 
 These are the https://www.jetbrains.com/help/idea/using-live-templates.html[IntelliJ IDEA Live Templates] that I've used in many demos and screencasts over the years.
 
-I tried using IntelliJ's https://www.jetbrains.com/help/idea/sharing-live-templates.html[sharing live templates], but failed to make it work.
+I used IntelliJ's https://www.jetbrains.com/help/idea/sharing-live-templates.html[sharing live templates] feature, to create `idea-settings.jar`. You should be able to import "Matt Raible's Shortcuts" using the following steps:
+
+1. On the **File** menu, click **Import Settings**.
+2. Specify the path to the JAR file with the exported live template configuration.
+3. In the **Import Settings** dialog box, select the **Live templates** check box and click **OK**.
+4. After restarting IntelliJ IDEA, you will see the imported live templates on the Live Templates page of the Settings / Preferences Dialog.
 
 https://www.jetbrains.com/idea/download/[Download IntelliJ IDEA] today! It's a spectacular IDEA for Java, Kotlin, TypeScript, JavaScript, S/CSS, and HTML.
 
-If you clone this project and open it in IntelliJ (with the Asciidoctor plugin installed), you should be able to edit this file and add the shortcuts below as live templates (**Tools** > **Save as Live Template**). Make sure to set the file type to match the language.
+If you'd rather not import _all_ of my templates, you can clone this project and open it in IntelliJ (with the Asciidoctor plugin installed). You should be able to edit this file and add the shortcuts below as live templates (**Tools** > **Save as Live Template**). Make sure to set the file type to match the language.
 
 == Spring Boot
 
