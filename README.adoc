@@ -638,14 +638,16 @@ heroku open -r client
 **jh-findBy**
 [source,java]
 ----
-findByBlogUserLoginOrderByDateDesc
+findByBlogUserLoginOrderByDateDesc(
+            org.jhipster.blog.security.SecurityUtils.getCurrentUserLogin().orElse(null), pageable);
 ----
 
-**jh-date**
+**jh-get**
 [source,ts]
 ----
-if (!vm.entry.date) {
-    vm.entry.date = new Date();
+if (blog.isPresent() && blog.get().getUser() != null &&
+    !blog.get().getUser().getLogin().equals(org.jhipster.blog.security.SecurityUtils.getCurrentUserLogin().orElse(""))) {
+    return new org.springframework.http.ResponseEntity<>("Unauthorized", org.springframework.http.HttpStatus.UNAUTHORIZED);
 }
 ----
 
@@ -660,18 +662,18 @@ if (!vm.entry.date) {
             <div [innerHTML]="entry.content"></div>
             <div class="btn-group mb-2 mt-1">
                 <button type="submit"
-                        [routerLink]="['/', { outlets: { popup: 'entry/'+ entry.id + '/edit'} }]"
-                        replaceUrl="true"
+                        [routerLink]="['/entry', entry.id, 'edit']"
                         class="btn btn-primary btn-sm">
-                    <span class="fa fa-pencil"></span>
-                    <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                    <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                 </button>
                 <button type="submit"
                         [routerLink]="['/', { outlets: { popup: 'entry/'+ entry.id + '/delete'} }]"
                         replaceUrl="true"
+                        queryParamsHandling="merge"
                         class="btn btn-danger btn-sm">
-                    <span class="fa fa-remove"></span>
-                    <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                    <fa-icon [icon]="'times'"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                 </button>
             </div>
         </div>
